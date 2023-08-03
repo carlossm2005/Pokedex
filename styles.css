@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geologica', sans-serif;
+}
+body{
+    height: 1500px;
+    overflow-x: hidden;
+}
+header{
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    width: 100vw;
+    min-height: 95px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .4s ease-out;
+}
+.scroll-down{
+    background-color: white;
+    box-shadow: 0px 5px 10px 5px rgb(214, 245, 255);
+}
+.pokebola{
+    max-width: 70px;
+    height: auto;
+    padding: 0 10px;
+}
+.a-pkbola{
+    display: flex;
+    align-items: center;
+}
+header ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+}
+header ul li a, header a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: black;
+}
+header a{
+    font-size: 1.75rem;
+}
+.back-img{
+    background-image: url(imgs/pokeback.png);
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 715px;
+    position: relative;
+}
+.text-content{
+    position: absolute;
+    z-index: 5;
+    top: 190px;
+    right: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-content h1{
+    font-weight: bolder;
+    font-size: 3rem;
+}
+.text-content p{
+    font-size: 1.25rem;
+    padding: 25px 0;
+}
+.text-content a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.25rem;
+    color: white;
+    background-color: rgb(0, 157, 255);
+    border-radius: 25px;
+    padding: 13px 35px;
+    transition: all .3s ease-out;
+}
+.text-content a:hover{
+    transform: scale(1.2);
+}
+.history{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.history h1{
+    font-weight: bolder;
+    font-size: 3rem;
+}
+.first-steps{
+    display: flex;
+    border-left: 5px solid rgb(31, 216, 31);
+    width: 80%;
+    min-height: 190px;
+}
+.year{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    color: springgreen;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.year img{
+    max-width: 70px;
+    max-height: 60px;
+    padding: 0 10px;   
+}
+.first-steps .texts{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.first-steps .texts h1{
+    font-size: 2rem;
+    color: springgreen;
+    font-weight: bold;
+}
