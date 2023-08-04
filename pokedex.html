@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;400;700&display=swap" rel="stylesheet"></head>
 <body>
     <main class="container">
         <header>
@@ -18,6 +18,16 @@
                 <li><a href="myfavs.html">My favs</a></li>
             </ul>
         </header>
+        <div class="searcher">
+            <h1>Pokemon</h1>
+            <form id="search-pokemon">
+                <input type="text" name="searcharea" class="texto-input">
+                <input type="submit" value="Search" class="submit">
+            </form>
+        </div>
+        <div id="container-pokemons">
+
+        </div>
     </main>
     <script type="module" src="js/index.js"></script>
 </body>
