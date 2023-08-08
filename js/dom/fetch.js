@@ -1,9 +1,10 @@
 const d = document,
+ls = localStorage,
 $containerpk = d.getElementById("container-pokemons");
+let arrayGlobal = [];
 
 export default function obtenerPokemon(){
-
-    let arrayGlobal = [];
+    const arrayLS = JSON.parse(ls.getItem("pokemones"));
     async function Datos(){
         try {
             for (let i = 1; i <= 150; i++) {
@@ -33,18 +34,25 @@ export default function obtenerPokemon(){
                 $containerpk.appendChild($card);
             */
             arrayGlobal.push(pokemon);
-            }
-            arrayGlobal.forEach(element =>{
+            };
+            arrayGlobal.forEach(pokemon =>{
                 const $card = d.createElement("div");
                 $card.className = "card";
                 $card.innerHTML =  `
-                <img src="${element.image}">
-                <h1>"${element.nombre}"</h1>
-                <p>Type: "${element.tipo}"</p>
-                <button class="boton-fav">Add to favs</button>
+                <img src="${pokemon.image}">
+                <h1>"${pokemon.nombre}"</h1>
+                <p>Type: "${pokemon.tipo}"</p>
+                <button data-id="${pokemon.id}" class="boton-fav">Add to favs</button>
                 `;
                 $containerpk.appendChild($card);
-            })
+                let dataButton = $card.querySelector("button").dataset.id;
+                arrayLS.forEach(e =>{
+                    if (dataButton === e.id) {
+                        $card.querySelector("button").textContent = "Remove";
+                        $card.querySelector("button").className = "boton-fav remove";
+                    }
+                })
+            });
         } catch (error) {
             console.log(error)
         }
