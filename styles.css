@@ -9,6 +9,9 @@ body{
     min-height: 1000px;
     overflow-y: visible;
 }
+.container header button{
+    display: none;
+}
 header{
     position: fixed;
     z-index: 50;
@@ -20,6 +23,56 @@ header{
     align-items: center;
     justify-content: space-around;
     transition: all .4s ease-out;
+}
+.panel{
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.767);
+    transition: transform 0.3s ease, opacity .4s ease;
+    transform: translate(0, -100%);
+}
+.panel.is-active{
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.menu{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.menu a{
+    padding: 1rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(194, 194, 194);
+    transition: all 0.3s ease;
+}
+.panel-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 25px;
+    background-color: rgb(173, 25, 25) !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    display: none !important;
 }
 .scroll-down{
     background-color: white;
@@ -214,7 +267,7 @@ header a{
     border-radius: 25%;
     max-width: 140px;
     max-height: 140px;
-    background-color: rgb(143, 188, 182);
+    background: linear-gradient(to top right, rgb(12, 202, 255), rgb(0, 143, 38));
     padding: 15px;
 }
 .card .boton-fav{
@@ -239,3 +292,107 @@ header a{
     background: transparent !important;
     color: aqua !important;
 }
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+.contain-loader{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+} 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+  @media only screen and (max-width: 1555px){
+    .text-content{
+        top: 150px;
+        right: 8vw;
+    }
+    #container-pokemons, #container-favs{
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+    .first-steps, .game-boy, .pikachu{
+        width: 90%;
+        min-height: 220px;
+    }
+    .year{
+        padding: 0 30px;
+    }
+    .history-title{
+        padding: 20px 0;
+    }
+    .back-img{
+        background-position-x: -150px;
+        background-position-y: center;
+    }
+  }
+  @media only screen and (max-width: 1200px){
+    .back-img{
+        background-position-x: -350px;
+        background-position-y: center;
+    }
+    .first-steps{
+        flex-direction: column;
+        border-top: 5px solid springgreen;
+        border-left: 0;
+        padding: 50px 0;
+    }
+    .game-boy{
+        flex-direction: column-reverse;   
+        border-top: 5px solid crimson;
+        border-right: 0;
+        padding: 50px 0;
+    }
+    .pikachu{
+        flex-direction: column;
+        border-top: 5px solid gold;
+        border-left: 0;
+        padding: 50px 0;
+    }
+    .history{
+        padding: 30px 0;
+    }
+    .container header ul{
+        display: none;
+    }
+    .panel-btn{
+        display: flex !important;
+    }
+    .year{
+        width: inherit;
+    }
+  }
+  @media only screen and (max-width: 900px){
+    .back-img{
+        display: flex;
+        justify-content: center;
+    }
+    .text-content{
+        top: 150px;
+        right: inherit;
+        text-align: center;
+    }
+    .back-img{
+        background-position-x: -790px;
+    }
+    #container-pokemons, #container-favs{
+        grid-template-columns: auto auto;
+        grid-gap: 20px;
+    }
+  }
+  @media only screen and (max-width: 600px){
+    #container-pokemons, #container-favs{
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+    .back-img .text-content h1{
+        font-size: 2rem;
+    }
+  }

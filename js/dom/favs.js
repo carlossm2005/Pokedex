@@ -1,4 +1,3 @@
-import obtenerPokemon from "./fetch.js";
 
 const d = document;
 const ls = localStorage;
@@ -11,24 +10,19 @@ export default function favsLs() {
     }
 
     function agregar(event){
-        console.log("agregar")
-        console.log(event.target.dataset.id)
         const $boton = event.target;
         const pokemonId = event.target.dataset.id;
         const pokemonObject = {
             id: pokemonId
         };
-        console.log(event.target);
         myFavs.push(pokemonObject);
         ls.setItem("pokemones", JSON.stringify(myFavs));
         $boton.textContent = "Remove";
         $boton.className = "boton-fav remove"
     };
     function eliminar(event){
-        console.log("eliminar")
         const $boton = event.target;
         const pokemonId = event.target.dataset.id;
-        console.log(pokemonId)
         $boton.textContent = "Add to favs";
         $boton.className = "boton-fav";
         let resultado = myFavs.filter(pokemon => 
@@ -36,7 +30,7 @@ export default function favsLs() {
         )
         myFavs = resultado;
         ls.setItem("pokemones", JSON.stringify(myFavs));
-    }
+    };
     $containerpk.addEventListener("click", e =>{
 
         if (e.target.className === "boton-fav") {

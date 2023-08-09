@@ -51,7 +51,10 @@ export default function obtenerPokemon(){
                         $card.querySelector("button").textContent = "Remove";
                         $card.querySelector("button").className = "boton-fav remove";
                     }
-                })
+                });
+                if (pokemon.id === 150) {
+                    d.querySelector(".contain-loader").remove()
+                }
             });
         } catch (error) {
             console.log(error)
